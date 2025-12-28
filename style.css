@@ -1,0 +1,157 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&display=swap');
+
+:root {
+    --cyan: hsl(179, 62%, 43%); 
+    --bright-yellow: hsl(71, 73%, 54%); 
+    --light-gray: hsl(204, 43%, 93%); 
+    --grayish-blue: hsl(218, 22%, 67%); 
+    --white: #ffffff;
+}
+
+/* Estilização global */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Karla', sans-serif;
+}
+
+body {
+    background-color: var(--light-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* Estilização do container principal */
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 600px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        max-width: 650px;
+
+        .card-top {
+            grid-column: 1/ -1;
+        }
+    }
+}
+
+
+/* === Estilização Interna das Seções === */
+
+/* Estilização do topo do cartão */
+.card-top {
+    padding: 2.5rem;
+    background-color: var(--white); 
+}
+
+.card-top h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--cyan);
+}
+
+.card-top h2 {
+    font-size: 1rem;
+    color: var(--bright-yellow);
+    margin-bottom: 1rem;
+}
+
+.card-top p {
+    font-size: 0.875rem;
+    color: var(--grayish-blue);
+    line-height: 1.5;
+}
+
+/* card esquerdo */
+.card-price {
+    background-color: var(--cyan);
+    color: var(--white);
+    padding: 2.5rem;
+}
+
+.card-price h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.price-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.price-box .price {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.price-box .interval {
+    opacity: 0.5; 
+}
+
+/* Botão */
+
+.card-price button {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--bright-yellow);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+    transition: background 0.3s;
+}
+
+.card-price button:hover {
+    background-color: hsl(71, 73%, 64%);
+}
+
+/* card direito */
+
+.card-why-us {
+    padding: 2.5rem;
+    background-color: hsl(179, 62%, 48%);
+    color: var(--white);
+}
+
+.card-why-us h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.card-why-us ul {
+    list-style: none;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    opacity: 0.75;
+}
+
+@media (min-width: 600px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        max-width: 635px; 
+    }
+
+    .container .card-top {
+        grid-column: 1 / -1;
+    }
+}   
